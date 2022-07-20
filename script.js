@@ -5,8 +5,6 @@ console.log(number);
 let totalscore = 0;
 let highScore = 0;
 
-
-
 //event listener for check btn
 document.querySelector('.check').addEventListener('click', function () {
   //to display the secret value on the screen only or development process
@@ -39,24 +37,24 @@ document.querySelector('.check').addEventListener('click', function () {
         highScore = temphigh;
       }
       document.querySelector('.highscore').textContent = highScore;
+
+      document.querySelector('body').style.backgroundColor = '#60b347';
     } else if (guess < number) {
       document.querySelector('.message').textContent = 'Too low, try again ';
       totalscore--;
       document.querySelector('.score').textContent = totalscore;
+      document.querySelector('body').style.backgroundColor = '#222';
     } else if (guess > number) {
       document.querySelector('.message').textContent = 'Too high, try again ';
       totalscore--;
       document.querySelector('.score').textContent = totalscore;
+      document.querySelector('body').style.backgroundColor = '#222';
     }
   } else {
     document.querySelector('.message').textContent = `Invalid Input ⛔`;
+    totalscore--;
   }
-
 });
 
 //eventlistener for again btn
-document.querySelector('.again') .addEventListener('click' , function(){
-
-    
-
-})
+document.querySelector('.again').addEventListener('click', function () {});
