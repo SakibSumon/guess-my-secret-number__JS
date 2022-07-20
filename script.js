@@ -35,6 +35,7 @@ document.querySelector('.check').addEventListener('click', function () {
       if (temphigh > highScore) {
         highScore = temphigh;
       }
+      
       document.querySelector('.highscore').textContent = highScore;
 
       document.querySelector('body').style.backgroundColor = '#60b347';
