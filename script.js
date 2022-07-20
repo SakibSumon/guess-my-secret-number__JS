@@ -35,7 +35,7 @@ document.querySelector('.check').addEventListener('click', function () {
       if (temphigh > highScore) {
         highScore = temphigh;
       }
-      
+
       document.querySelector('.highscore').textContent = highScore;
 
       document.querySelector('body').style.backgroundColor = '#60b347';
@@ -59,5 +59,5 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 });
 
-//eventlistener for again btn
+//eventlistener for again btn which will reset all the values
 document.querySelector('.again').addEventListener('click', function () {});
