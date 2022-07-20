@@ -8,7 +8,7 @@ let highScore = 0;
 //event listener for check btn
 document.querySelector('.check').addEventListener('click', function () {
   //to display the secret value on the screen only or development process
-  document.querySelector('.number').textContent = number;
+  //   document.querySelector('.number').textContent = number;
 
   //fetching the input value
   let guess = Number(document.querySelector('.guess').value);
@@ -20,7 +20,7 @@ document.querySelector('.check').addEventListener('click', function () {
     if (number === guess) {
       document.querySelector('.message').textContent =
         ' 🎉🎊🥳 congratulations';
-
+      document.querySelector('.number').textContent = number;
       //calculating totalscore and storing it to a variable
       totalscore = totalscore + number;
       document.querySelector('.score').textContent = totalscore;
@@ -28,7 +28,6 @@ document.querySelector('.check').addEventListener('click', function () {
       //generating new secret everytime user guess the correct number
       number = Math.trunc(Math.random(20) * 20) + 1;
       console.log('secret number again ' + number);
-      document.querySelector('.number').textContent = number;
 
       //calculating and comparing high score and storing to a variable
       let temphigh;
@@ -40,17 +39,20 @@ document.querySelector('.check').addEventListener('click', function () {
 
       document.querySelector('body').style.backgroundColor = '#60b347';
     } else if (guess < number) {
+      //guess is less than secret
       document.querySelector('.message').textContent = 'Too low, try again ';
       totalscore--;
       document.querySelector('.score').textContent = totalscore;
       document.querySelector('body').style.backgroundColor = '#222';
     } else if (guess > number) {
+      //guess is greater than number
       document.querySelector('.message').textContent = 'Too high, try again ';
       totalscore--;
       document.querySelector('.score').textContent = totalscore;
       document.querySelector('body').style.backgroundColor = '#222';
     }
   } else {
+    document.querySelector('body').style.backgroundColor = '#222';
     document.querySelector('.message').textContent = `Invalid Input ⛔`;
     totalscore--;
   }
